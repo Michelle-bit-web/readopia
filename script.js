@@ -175,7 +175,7 @@
 //     }
 //   ]
 
-  let books = [
+let books = [
     {
       "name": "Smart Learning",
       "description": "Designing Next-Gen Eductational Apps",
@@ -355,3 +355,21 @@
       ]
     }
   ]
+
+
+  function init(){
+  }
+
+  function triggerSidebar(event){
+    document.getElementById('sidebar').classList.toggle('d_none')
+    event.stopPropagation();
+  }
+
+  function removeSidebar(event){
+    document.getElementById('sidebar').classList.add('d_none')
+    event.stopPropagation();
+  }
+  function removeDNone(event){
+    document.getElementById('sidebar').classList.remove('d_none')
+    event.stopPropagation();
+  }

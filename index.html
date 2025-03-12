@@ -1,55 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="shortcut icon" href="./assets/icon/readopia-Logo-blk-crl .PNG" type="PNG">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="shortcut icon" href="./assets/icon/readopia-Logo-blk-crl .PNG" type="PNG" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Readopia</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
-<body>
+  </head>
+  <body onload="init()" onclick="removeSidebar(event)">
     <header>
-       <div>
-        <img class="img_header" src="./assets/icon/readopia-Logo-text .PNG" alt="">
+      <div class="header_content">
+        <img class="img_header" src="./assets/icon/readopia-Logo-text .PNG" alt="" />
         <nav>
-            <div>
+          <div class="div_nav_content">
             <a href="">Home</a>
             <a href="">Categories</a>
             <a href="">Contact</a>
-            <div>
-                <input type="text" placeholder="Search..." name="search">
-                <button class="search_btn"><img class="search_icon" src="./assets/icon/search Icon.PNG" alt=""></button><i></i>
+            <div class="div_search_input">
+              <input type="text" placeholder="Search..." name="search" />
+              <button class="search_btn"><img class="search_icon" src="./assets/icon/search Icon.PNG" alt="" /></button>
             </div>
-            </div>
-            
-           </nav>
-       </div> 
-       
+          </div>
+        </nav>
+        <div id ="burger_menu" class="burger_menu" onclick="triggerSidebar(event)">
+          <div class="burger_menu_icon"></div>
+          <div class="burger_menu_icon"></div>
+          <div class="burger_menu_icon"></div>
+        </div>
+      </div>
     </header>
+
+    <div id="sidebar" class="nav_sidebar d_none" onclick="removeDNone(event)">
+      <a href="">Home</a>
+      <a href="">Categories</a>
+      <a href="">Contact</a>
+      <div class="search_input_sidebar">
+        <button class="search_btn_sidebar">
+          <img class="search_icon" src="./assets/icon/search Icon.PNG" alt="" />
+        </button>
+        <input id="input" class="input_sidebar" type="text" placeholder="Search..." name="search" />
+      </div>
+    </div>
+
     <div>
-        <section class="section_best_seller">
-            <h1>Best Seller</h1>
-        </section>
-        <section class="section_catergories">
-            <h1>Browse By Category</h1>
-        </section>
-        <section class="section_new_additions">
-            <h1>New Additions</h1>
-        </section>
+      <section class="section_best_seller">
+        <h1>Best Seller</h1>
+      </section>
+      <section class="section_catergories">
+        <h1>Browse By Category</h1>
+      </section>
+      <section class="section_new_additions">
+        <h1>New Additions</h1>
+      </section>
     </div>
     <footer>
-        <div>
-            <img class="img_footer" src="./assets/icon/readopia-Logo-blk-crl .PNG" alt="">
-            <div class="div_footer_links">
-               <a href="#">AGB</a>
-                <div class="separator"></div>
-                <a href="#">Impressum</a>
-                <div class="separator"></div>
-                <a href="#">Datenschutz</a>
-            </div>
+      <div class="div_footer_content">
+        <img class="img_footer" src="./assets/icon/readopia-Logo-blk-crl .PNG" alt="" />
+        <div class="div_footer_links">
+          <a href="#">AGB</a>
+          <div class="separator"></div>
+          <a href="#">Impressum</a>
+          <div class="separator"></div>
+          <a href="#">Datenschutz</a>
         </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
