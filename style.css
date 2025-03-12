@@ -1,0 +1,21 @@
+.img_header {
+  width: 250px;
+}
+.img_footer {
+  width: 50px;
+}
+.search_icon {
+  width: 15px;
+  border-radius: 100%;
+}
+.search_btn {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 30px;
+  border-radius: 0 50% 50% 0;
+  padding: 0;
+}
+.section_best_seller{
+    min-height: 100vh
+}

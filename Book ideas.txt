@@ -1,0 +1,44 @@
+Category:
+
+1) Education:
+- book1 = Smart Learning: Designing Next-Gen Eductational Apps
+          Dragan Petrovic
+
+- book 2 =Programming for Learning: The Developer´s Guide to Education Tech
+          Satoshi Endo
+
+2) Romantik:
+- book3 = Die Farben des Himmels
+          Laura Blau
+- book 9 = Liebe in Zeiten des Krieges
+
+3) Science Fiction:
+- Shadow Code:
+  
+
+- book 4 = Neon Ghosts
+   Elina Vestergaard
+
+4) book 5 Health & Fitness:
+- Move, Sweat, Thrive: The Power of Daily Exercise
+   Elara Vázquez
+
+- book 6 = Nutrition & Diet: The Metabolism Boost Plan
+  Kaelen Voss
+
+- book7 = Mental Health: Stronger Minde, Stronger Body
+  Zanele Mokoena
+
+5) Fantasy
+- book 8 Das verborgene Königreich
+
+
+
+Authors:
+- Kaelen Voss (Netherlands) – Known for intricate space operas.
+- Satoshi Endo (Japan) – Writes cyberpunk thrillers with AI themes.
+- Elara Vázquez (Spain) – Specializes in time-travel mysteries.
+- Dragan Petrovic (Serbia) – Blends sci-fi with Slavic mythology.
+- Lucien Moreau (France) – Writes dystopian tales with philosophical depth.
+- Zanele Mokoena – Known for her gripping sci-fi thrillers set in post-apocalyptic Africa.
+- Elina Vestergaard (Finland/Denmark)
