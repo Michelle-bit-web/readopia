@@ -7,9 +7,10 @@
     <title>Readopia</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="./scripts/templates.js"></script>
     <script src="script.js"></script>
   </head>
-  <body onload="renderImg()" onclick="removeSidebar(event)">
+  <body onload="init()" onclick="removeSidebar(event)">
     <header>
       <div class="header_content max_width">
         <img class="img_header" src="./assets/icon/readopia-Logo-text .PNG" alt="" />
@@ -49,23 +50,27 @@
         <h1>Best Seller</h1>
         <div class="best_sellers">
           <div id="best_seller1" class="best_seller_img" onclick="switchBestSeller(-1)">Left</div>
-          <div id="best_seller2" class="best_seller_img">Middle</div>
+          <div id="best_seller2" class="best_seller_img" onclick="openBookPage()">
+            <p>Middle</p>
+            <a href="bookPage.html" target="_blank">See more</a>
+          </div>
           <div id="best_seller3" class="best_seller_img" onclick="switchBestSeller(1)">Right</div>
         </div>
       </section>
       <section class="section_catergories">
         <h1>Browse By Category</h1>
         <div class="div_categories">
-          <div class="categories">Education</div>
-          <div class="categories">Health & Fitness</div>
-          <div class="categories">Romance</div>
-          <div class="categories">Science Fiction & Fantasy</div>
+          <div id="education" class="categories" onclick="openOverlay(education)">Education</div>
+          <div id="health" class="categories" onclick="openOverlay(health)">Health & Fitness</div>
+          <div id="romance" class="categories" onclick="openOverlay(romance)">Romance</div>
+          <div id="fantasy" class="categories" onclick="openOverlay(fantasy)">Science Fiction & Fantasy</div>
+          <div id="overlay" class="overlay d_none"> Overlay</div>
         </div>
       </section>
       <section class="section_new_additions">
         <h1>New Additions</h1>
         <div id="new_additions" class="div_additions">
-          <div class="div_new_books">Rendern der new Additions</div>
+          <div id="div_new_books" class="div_new_books">Rendern der new Additions</div>
         </div>
       </section>
     </div>

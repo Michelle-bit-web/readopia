@@ -5,9 +5,11 @@
     <title>Readopia</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="./scripts/templates.js"></script>
     <script src="script.js"></script>
+   
   </head>
-  <body onload="renderImg()" onclick="removeSidebar(event)">
+  <body onload="init()" onclick="removeSidebar(event)">
     <header>
       <div class="header_content max_width">
         <img class="img_header" src="./assets/icon/readopia-Logo-text .PNG" alt="" />
@@ -42,10 +44,10 @@
       </div>
     </div>
 
-    <div class="book_page outer_div max_width">
-      <section class="section_book_page">
+    <div id="render_single_books" class="book_page outer_div max_width">
+      <!-- <section class="section_book_page">
         <div class="upper_page_part">
-            <div>Cover-Bild rendern</div>
+            <div id="cover_img">Cover-Bild rendern</div>
             <div class="book_informations">
                 <div id="title">title:</div>
                 <div id="author">author:</div>
@@ -55,7 +57,7 @@
         </div>
         <div>
             <div>like Button</div>
-            <p>description:</p>
+            <p id="book_description">description:</p>
         </div>
       </section>
       <section class="section_comments">
@@ -68,7 +70,7 @@
             <button onclick="sendComment()">send</button>
         </div>
         <div id="written_comments" class="written_comments">comment1 comment2</div>
-      </section>
+      </section> -->
     </div>
     <footer>
       <div class="div_footer_content max_width">
@@ -81,6 +83,7 @@
           <a href="#">Datenschutz</a>
         </div>
       </div>
+      <div>Icons stammen u.a. von <a href="https://pixabay.com/">pixabay.com</a></div>
     </footer>
   </body>
 </html>
