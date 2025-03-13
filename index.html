@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body onload="init()" onclick="removeSidebar(event)">
+  <body onload="renderImg()" onclick="removeSidebar(event)">
     <header>
       <div class="header_content max_width">
         <img class="img_header" src="./assets/icon/readopia-Logo-text .PNG" alt="" />
@@ -48,9 +48,9 @@
       <section class="section_best_seller">
         <h1>Best Seller</h1>
         <div class="best_sellers">
-          <div id="left_best_seller">Left</div>
-          <div id="best_seller_render">Middle</div>
-          <div id="right_best_seller">Right</div>
+          <div id="best_seller1" class="best_seller_img" onclick="switchBestSeller(-1)">Left</div>
+          <div id="best_seller2" class="best_seller_img">Middle</div>
+          <div id="best_seller3" class="best_seller_img" onclick="switchBestSeller(1)">Right</div>
         </div>
       </section>
       <section class="section_catergories">

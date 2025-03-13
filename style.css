@@ -126,6 +126,7 @@ nav{
     min-height: 100vh;
     width: 100%;
 }
+
 .best_sellers{
     display: flex;
     justify-content: center;
@@ -134,14 +135,23 @@ nav{
     width: 100%;
 }
 
-#left_best_seller,
-#right_best_seller{
+#best_seller1,
+#best_seller3{
     width: 20%;
+    height: 30vh;
     background-color: grey;
     
 }
-#best_seller_render{
-    flex:1
+#best_seller2{
+    flex:1;
+    height: 50vh;
+}
+
+.best_seller_img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
 }
 
 /* Sektion Categories */

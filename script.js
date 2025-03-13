@@ -186,6 +186,7 @@ let books = [
       "price": 19.99,
       "publishedYear": 2018,
       "genre": "Education",
+      "bestseller":true,
       "comments": [
         {
           "name": "Reader123",
@@ -215,6 +216,7 @@ let books = [
       "price": 14.50,
       "publishedYear": 2021,
       "genre": "Education",
+      "bestseller":false,
       "comments": []
     },
     {
@@ -227,6 +229,7 @@ let books = [
       "price": 22.95,
       "publishedYear": 2019,
       "genre": "Romantik",
+      "bestseller":false,
       "comments": [
         {
           "name": "LeserPeter",
@@ -260,6 +263,7 @@ let books = [
       "price": 18.00,
       "publishedYear": 2020,
       "genre": "Science-Fiction",
+      "bestseller":true,
       "comments": [
         {
           "name": "BuchKenner",
@@ -281,6 +285,7 @@ let books = [
       "price": 16.75,
       "publishedYear": 2024,
       "genre": "Health & Fitness",
+      "bestseller":true,
       "comments": []
     },
     {
@@ -293,6 +298,7 @@ let books = [
       "price": 12.30,
       "publishedYear": 2022,
       "genre": "Health & Fitness",
+      "bestseller":false,
       "comments": [
         {
           "name": "BücherLiebhaber",
@@ -314,6 +320,7 @@ let books = [
       "price": 21.00,
       "publishedYear": 2025,
       "genre": "Health & Fitness",
+      "bestseller":false,
       "comments": [
         {
           "name": "Leser123",
@@ -331,6 +338,7 @@ let books = [
       "price": 17.50,
       "publishedYear": 2020,
       "genre": "Fantasy",
+      "bestseller":false,
       "comments": [
         {
           "name": "Bookworm92",
@@ -348,6 +356,7 @@ let books = [
       "price": 19.99,
       "publishedYear": 2016,
       "genre": "Romantik",
+      "bestseller":false,
       "comments": [
         {
           "name": "Bibliophile23",
@@ -365,11 +374,7 @@ let books = [
     }
   ]
 
-console.log(books)
-
-  function init(){
-    renderImg();
-  }
+  
 
   //Für die Sidebar
   function triggerSidebar(event){
@@ -400,18 +405,43 @@ console.log(books)
     comment = "";
   }
 
-function renderImg(){
-  // let bestSeller = document.getElementById('best_seller_render').innerHTML = "";
-  for (let indexImg = 1; indexImg < books.cover.length; indexImg++) {
-    bestSeller += `<div id="divImg${indexImg}" class="divImg"></div>`;
-    getBookImg(indexImg);
-  }
-}
+  function renderImg(){
 
-function getBookImg(indexImg){
-  document.getElementById(`divImg${indexImg}`).style.backgroundImage +=
-    `url(./assets/img/book${indexImg}.png)`;
+    let bestSeller = books.filter(best => best.bestseller == true)
+    console.table(bestSeller)
+    for (let i = 0; i < bestSeller.length; i++) {
+    let coverBestSeller = bestSeller[i].cover;
+    document.getElementById(`best_seller${i+1}`).style.backgroundImage = `url('./assets/img/${coverBestSeller}.png')`;
+    }
+  }
+
+
+function switchBestSeller(a){
+  if (a < 0){}
+  if (a > 0){}
 }
+// function renderImg(){
+ 
+//   for (let indexImg = 0; indexImg < 1; indexImg++) {
+//     let cover = books[indexImg].cover;
+//     document.getElementById('best_seller_render').innerHTML += `<div id="divImg${indexImg}" class="divImg">Hallo</div>`;
+//     getBookImg(indexImg, cover);}
+// }
+
+// function renderImg(){
+//   let bestSeller = document.getElementById('best_seller_render').innerHTML = "";
+//   for (let indexImg = 0; indexImg < books.length; indexImg++) {
+//     let cover = books[indexImg].cover;
+//     bestSeller += `<div id="divImg${indexImg}" class="divImg"></div>`;
+//     getBookImg(indexImg, cover);
+//   }
+// }
+
+// function getBookImg(index, cover){
+//   document.getElementById(`divImg${index}`).style.backgroundImage +=
+//     `url('./assets/img/${cover}.png')'`;
+// }
+
 
 // let book = books.filter(getBookCover => getBookCover.cover == `book${indexImg}`);
 // console.log(book)
