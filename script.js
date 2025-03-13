@@ -386,6 +386,20 @@ console.log(books)
     event.stopPropagation();
   }
 
+  //für die Kommentarfunktion
+
+  function sendComment(){
+    let name = document.getElementById('username').value;
+    let comment = document.getElementById('comment_text').value;
+
+    if (name !== "" && comment !== ""){
+      document.getElementById('written_comments').innerHTML += `<p>${name}: <br> ${comment}</p>`
+    }else {alert("Fill in both fields, please!")};
+    
+    name = "";
+    comment = "";
+  }
+
 function renderImg(){
   // let bestSeller = document.getElementById('best_seller_render').innerHTML = "";
   for (let indexImg = 1; indexImg < books.cover.length; indexImg++) {
