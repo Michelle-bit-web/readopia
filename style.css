@@ -1,7 +1,23 @@
-body{
-    margin: 0;
+@font-face {
+    font-family: 'jackie';
+    src: url('./assets/fonts/jackie.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Sacramento';
+    src: url('./assets/fonts/Sacramento.ttf') format('truetype');
+}
+
+
+body{
+    margin: 0;
+    font-family: 'jackie';
+}
+
+h1{
+    font-weight: lighter;
+    font-size: 40px;
+}
 a {
     text-decoration: none;
 }
@@ -77,9 +93,6 @@ a:hover{
     background-color: rgb(150, 149, 149);
 }
 
-.section_best_seller{
-    min-height: 100vh
-}
 
 .header_content{
     display: flex;
@@ -98,6 +111,80 @@ nav{
     display: flex;
 }
 
+/* Sektion Best Seller */
+.section_best_seller{
+    min-height: 100vh;
+    width: 100%;
+}
+.best_sellers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+#left_best_seller,
+#right_best_seller{
+    width: 20%;
+    background-color: grey;
+    
+}
+#best_seller_render{
+    flex:1
+}
+
+/* Sektion Categories */
+.div_categories{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    gap: 5%;
+}
+
+.categories{
+    background-color: grey;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 30%;
+}
+
+.categories:hover{
+    filter: brightness(80%);
+    scale: 1.05;
+}
+
+/* Sektion Categories */
+.div_additions{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    gap: 5%;
+}
+
+.div_new_books{
+    background-color: grey;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 30%;
+}
+
+.div_new_books:hover{
+    filter: brightness(80%);
+    scale: 1.05;
+}
 
 /* Footer-Bereich */
 
@@ -130,4 +217,31 @@ nav{
         display: flex;
         flex-direction: column;
     }
+}
+
+
+/* extra Book Page */
+.book_page{
+    display: flex;
+    flex-direction: column;
+}
+.section_book_page{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.upper_page_part{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section_comments{
+    background-color: gray;
+    flex:1;
+}
+
+.div_comments{
+    display: flex;
+    flex-direction: column;
 }

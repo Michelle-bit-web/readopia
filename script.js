@@ -177,8 +177,9 @@
 
 let books = [
     {
-      "name": "Smart Learning",
-      "description": "Designing Next-Gen Eductational Apps",
+      "name": "Smart Learning - Designing Next-Gen Eductational Apps",
+      "cover": "book1",
+      "description": "Discover innovative strategies for designing cutting-edge educational apps that enhance engagement, adaptability, and personalized learning in the digital age.",
       "author": "Dragan Petrovic",
       "likes": 1250,
       "liked": true,
@@ -205,8 +206,9 @@ let books = [
       ]
     },
     {
-      "name": "Programming for Learning",
-      "description": "The Developer´s Guide to Education Tech",
+      "name": "Programming for Learning - The Developer´s Guide to Education Tech",
+      "cover": "book2",
+      "description": "Master the art of coding for education! This guide explores building impactful, user-friendly edtech solutions to transform learning experiences.",
       "author": "Satoshi Endo",
       "likes": 980,
       "liked": false,
@@ -217,7 +219,8 @@ let books = [
     },
     {
       "name": "Die Farben des Himmels",
-      "description": "Beschreibung einsetzen",
+      "cover": "book3",
+      "description": "A heartfelt romance unfolds under painted skies, where love, fate, and dreams intertwine in a journey of passion and destiny.",
       "author": "Laura Blau",
       "likes": 1520,
       "liked": true,
@@ -249,7 +252,8 @@ let books = [
     },
     {
       "name": "Neon Ghosts",
-      "description": "Beschreibung einsetzen",
+      "cover": "book4",
+      "description": "In a neon-lit future, a rogue hacker unravels a haunting mystery, where ghosts of the past merge with the digital unknown.",
       "author": "Elina Vestergaard",
       "likes": 750,
       "liked": false,
@@ -269,6 +273,7 @@ let books = [
     },
     {
       "name": "Move, Sweat, Thrive",
+      "cover": "book5",
       "description": "The Power of Daily Exercise",
       "author": "Elara Vázquez",
       "likes": 1300,
@@ -280,6 +285,7 @@ let books = [
     },
     {
       "name": "Nutrition & Diet",
+      "cover": "book6",
       "description": "The Metabolism Boost Plans",
       "author": "Kaelen Voss",
       "likes": 890,
@@ -300,6 +306,7 @@ let books = [
     },
     {
       "name": "Mental Health",
+      "cover": "book7",
       "description": "Stronger Minde, Stronger Body",
       "author": "Zanele Mokoena",
       "likes": 1450,
@@ -316,6 +323,7 @@ let books = [
     },
     {
       "name": "Das verborgene Königreich",
+      "cover": "book8",
       "description": "Beschreibung einsetzen",
       "author": "Elena Gold",
       "likes": 920,
@@ -332,6 +340,7 @@ let books = [
     },
     {
       "name": "Liebe in Zeiten des Krieges",
+      "cover": "book9",
       "description": "Beschreibung einsetzen",
       "author": "Emilia Rot",
       "likes": 1800,
@@ -356,10 +365,13 @@ let books = [
     }
   ]
 
+console.log(books)
 
   function init(){
+    renderImg();
   }
 
+  //Für die Sidebar
   function triggerSidebar(event){
     document.getElementById('sidebar').classList.toggle('d_none')
     event.stopPropagation();
@@ -373,3 +385,19 @@ let books = [
     document.getElementById('sidebar').classList.remove('d_none')
     event.stopPropagation();
   }
+
+function renderImg(){
+  // let bestSeller = document.getElementById('best_seller_render').innerHTML = "";
+  for (let indexImg = 1; indexImg < books.cover.length; indexImg++) {
+    bestSeller += `<div id="divImg${indexImg}" class="divImg"></div>`;
+    getBookImg(indexImg);
+  }
+}
+
+function getBookImg(indexImg){
+  document.getElementById(`divImg${indexImg}`).style.backgroundImage +=
+    `url(./assets/img/book${indexImg}.png)`;
+}
+
+// let book = books.filter(getBookCover => getBookCover.cover == `book${indexImg}`);
+// console.log(book)
