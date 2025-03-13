@@ -16,7 +16,7 @@ body,
 header,
 footer{
     margin: 0;
-    font-family: 'Arial';
+    font-family: 'jackie';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,13 +31,12 @@ h1{
     font-weight: lighter;
     font-size: 28px;
     margin: 10px 10px;
-    font-family: 'Arial';
+    border-bottom: 1px solid rgb(232, 231, 231);
 }
 h2{
     font-weight: lighter;
     font-size: 24x;
     margin: 10px 10px;
-    font-family: 'Arial'; 
 }
 a {
     text-decoration: none;
@@ -140,10 +139,12 @@ nav{
 
 .book_img{
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 30%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 30%;
 }
 .div_book_info{
     height: 200px
@@ -166,9 +167,7 @@ nav{
 #best_seller1,
 #best_seller3{
     width: 20%;
-    height: 30vh;
-    background-color: grey;
-    
+    height: 30vh; 
 }
 #best_seller2{
     flex:1;
@@ -179,7 +178,6 @@ nav{
 }
 .best_seller_img a{
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.679);
 }
 
 .best_seller_img{
@@ -307,20 +305,24 @@ nav{
     display: flex;
     justify-content: space-evenly;
 }
-.section_comments{
-    background-color: gray;
+.section_comments,
+.div_like{
+    border-bottom: 1px solid rgb(186, 186, 186);
 }
 
 .div_comments{
     display: flex;
     flex-direction: column;
 }
-
-.heart_icon,
-.send_icon{
-    width:24px
+textarea{
+min-height: 40px;
 }
 
 .div_textarea{
     
+    display: flex;
+}
+.heart_icon,
+.send_icon{
+    width:30px
 }

@@ -1,5 +1,5 @@
 function renderBookTemplate(i,title,cover,author,description,likes,price,year,genre){
-    return `<br>
+    return `
     <section class="section_book_page">
         <div class="upper_page_part">
             <h1>${title}</h1>
@@ -14,9 +14,9 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
             </div>
             
         </div>
-        <div>
+        <div class="div_like">
             <div>${likes}<img onclick="LikeOrDislike()" class="heart_icon" src="./assets/icon/heart_icon.png" alt="like button"></div>
-            <p id="book_description">Description:${description}</p>
+            <p id="book_description">Description:<br>${description}</p>
         </div>
     </section>
     <section class="section_comments">
