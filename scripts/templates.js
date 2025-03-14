@@ -42,6 +42,6 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
     </section>`
 }
 
-function renderComments(user, comment){
-    return `<p class="saved_comment"><b>${user}:</b> <br> ${comment}</p>`
+function renderComments(user, commentText){
+    return `<p class="saved_comment"><b>${user}:</b> <br> ${commenttext}</p>`
 }

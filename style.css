@@ -6,7 +6,7 @@
 body{
     font-size: 20px;
     font-weight: lighter;
-    color: rgb(245, 217, 197);
+    color: rgb(248, 228, 215);
     background-image: url('./assets/img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,13 +31,13 @@ footer{
 
 h1{
     font-weight: lighter;
-    font-size: 28px;
+    font-size: 32px;
     margin: 10px 10px;
     border-bottom: 1px solid rgb(232, 231, 231);
 }
 h2{
     font-weight: lighter;
-    font-size: 24x;
+    font-size: 28x;
     margin: 10px 10px;
 }
 a {

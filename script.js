@@ -1,9 +1,9 @@
 let books = [
   {
-    name: "Smart Learning - Designing Next-Gen Eductational Apps",
+    name: "Smart Learning - <br>Designing Next-Gen Eductational Apps",
     cover: "book1",
     description:
-      "Discover innovative strategies for designing cutting-edge educational apps that enhance engagement, adaptability, and personalized learning in the digital age.",
+      "Discover innovative strategies for designing educational apps that enhance personalized learning in the digital age.",
     author: "Dragan Petrovic",
     likes: 1250,
     liked: true,
@@ -32,10 +32,10 @@ let books = [
     ],
   },
   {
-    name: "Programming for Learning - The Developer´s Guide to Education Tech",
+    name: "Programming for Learning -<br>The Developer´s Guide to Education Tech",
     cover: "book2",
     description:
-      "Master the art of coding for education! This guide explores building impactful, user-friendly edtech solutions to transform learning experiences.",
+      "Master the art of coding for education! This guide explores building impactful, user-friendly edtech solutions.",
     author: "Satoshi Endo",
     likes: 980,
     liked: false,
@@ -54,7 +54,7 @@ let books = [
     name: "Die Farben des Himmels",
     cover: "book3",
     description:
-      "A heartfelt romance unfolds under painted skies, where love, fate, and dreams intertwine in a journey of passion and destiny.",
+      "A heartfelt romance unfolds under painted skies, where love, fate, and dreams intertwine.",
     author: "Laura Blau",
     likes: 1520,
     liked: true,
@@ -104,7 +104,7 @@ let books = [
   {
     name: "Move, Sweat, Thrive",
     cover: "book5",
-    description: "The Power of Daily Exercise",
+    description: "Get to know the power of daily exercise.",
     author: "Elara Vázquez",
     likes: 1300,
     liked: true,
@@ -117,7 +117,7 @@ let books = [
   {
     name: "Nutrition & Diet",
     cover: "book6",
-    description: "The Metabolism Boost Plans",
+    description: "Learn all about most effectiv metabolism boost plans.",
     author: "Kaelen Voss",
     likes: 890,
     liked: false,
@@ -139,7 +139,7 @@ let books = [
   {
     name: "Mental Health",
     cover: "book7",
-    description: "Stronger Minde, Stronger Body",
+    description: "Stronger Mind, Stronger Body. Explore resilience from cultural context and practical strategies-",
     author: "Zanele Mokoena",
     likes: 1450,
     liked: true,
@@ -157,7 +157,7 @@ let books = [
   {
     name: "Das verborgene Königreich",
     cover: "book8",
-    description: "Beschreibung einsetzen",
+    description: "A magical fantasy adventure where ancient secrets, and a young hero’s destiny intertwine in a battle for freedom.",
     author: "Elena Gold",
     likes: 920,
     liked: false,
@@ -179,7 +179,7 @@ let books = [
   {
     name: "Liebe in Zeiten des Krieges",
     cover: "book9",
-    description: "Beschreibung einsetzen",
+    description: "Heartfelt moments set during World War II, told through a child's eyes.",
     author: "Emilia Rot",
     likes: 1800,
     liked: true,
@@ -234,10 +234,11 @@ function loadAllBooks() {
       bookGenre,
     );
     getCoverImages(bookCovers);
-    for (let j = 0; j < books[i].comments.length; j++) {
-      let user = books[i].comments[j].name;
-      let comment = books[i].comments[j].comment;
-      document.getElementById("written_comments").innerHTML += renderComments(user,comment);
+    let singleBookComment = books[i].comments;
+    for (let j = 0; j = singleBookComment.length; j++) {
+      let commentText = singleBookComment[j].comment;
+      let user = singleBookComment[j].name;
+      document.getElementById("written_comments").innerHTML += renderComments(user,commentText);
     }
   }
 }
