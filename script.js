@@ -203,12 +203,12 @@ let books = [
     ],
   },
 ];
-//Bilder Rendern
+
 function init() {
   loadAllBooks();
   checkLikeStatus();
 }
-//simplere Variante
+
 function loadAllBooks() {
   for (let i = 0; i < books.length; i++) {
     let bookTitles = books[i].name;
@@ -238,7 +238,6 @@ function getComment(i){
   }
 }
 
-//Like-Button: Liked - true or false?
 function checkLikeStatus() {
   for (let i = 0; i < books.length; i++) {
     let likeStatus = books[i].liked
@@ -248,8 +247,6 @@ function checkLikeStatus() {
     }
   }
 }
-
-//On click - Count +1 or -1
 
 function LikeOrDislike(a, likes, i, event) {
   if (a == 1) {
@@ -267,14 +264,18 @@ function LikeOrDislike(a, likes, i, event) {
   event.stopPropagation();
 }
 
-//Vorlage vom Buchstaben-Counter
-function countLetters() {
-  let inputLetters = document.getElementById("inputCounter").value.length;
-  document.getElementById("counter").innerHTML = "<br>Anzahl der Zeichen:" + inputLetters;
-}
-//Ich brauch ja eine Summe aus den Klicks
+function sendComment() {
+  let name = document.getElementById("username").innerHTML;
+  let comment = document.getElementById(`comment_text${i}`).value;
 
-//Für die Sidebar
+  if (comment !== "") {
+    document.getElementById(`written_comments${i}`).innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
+  } else {
+    alert("Fill in a comment, please!");
+  }
+  comment = "";
+}
+
 function triggerSidebar(event) {
   document.getElementById("sidebar").classList.toggle("d_none");
   event.stopPropagation();
@@ -288,16 +289,4 @@ function removeSidebar(event) {
 function removeDNone(event) {
   document.getElementById("sidebar").classList.remove("d_none");
   event.stopPropagation();
-}
-//für die Kommentarfunktion
-function sendComment() {
-  let name = document.getElementById("username").innerHTML;
-  let comment = document.getElementById(`comment_text${i}`).value;
-
-  if (comment !== "") {
-    document.getElementById(`written_comments${i}`).innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
-  } else {
-    alert("Fill in a comment, please!");
-  }
-  comment = "";
 }

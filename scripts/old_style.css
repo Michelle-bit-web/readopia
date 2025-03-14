@@ -112,13 +112,9 @@ p{
     cursor: pointer;
     scale: 1.05;
 }
-
 .img_footer {
   width: 50px;
-  padding-left: 24px;
-  padding-top: 24px;
 }
-
 .search_icon {
   width: 15px;
   border-radius: 100%;
@@ -164,6 +160,7 @@ nav{
 .div_search_input{
     display: flex;
 }
+/* Einzelseite */
 
 .book_img{
     background-repeat: no-repeat;
@@ -174,11 +171,104 @@ nav{
     border: 1px solid rgb(186, 186, 186);
     border-radius: 30%;
 }
-
 .div_book_info{
     height: 200px;
     background-color: rgba(0, 0, 0, 0.28);
     border-radius: 5%;
+}
+
+/* Sektion Best Seller */
+.section_best_seller{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.best_sellers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+#best_seller1,
+#best_seller3{
+    width: 20%;
+    height: 30vh; 
+}
+#best_seller2{
+    flex:1;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.best_seller_img a{
+    color: rgb(0, 0, 0);
+}
+
+.best_seller_img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+}
+#best_seller1:hover,
+#best_seller3:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+/* Sektion Categories */
+.div_categories{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    gap: 5%;
+}
+
+.categories{
+    background-color: grey;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 30%;
+}
+
+.categories:hover{
+    filter: brightness(80%);
+    scale: 1.05;
+}
+
+/* Sektion Categories */
+.div_additions{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    gap: 5%;
+}
+
+.div_new_books{
+    background-color: grey;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 30%;
+}
+
+.div_new_books:hover{
+    filter: brightness(80%);
+    scale: 1.05;
 }
 
 .overlay{
@@ -190,11 +280,15 @@ nav{
     background-color: rgba(0, 0, 0, 0.331);
 }
 
+
 #book_description{
     background-color: rgba(205, 154, 115, 0.317);
     border-radius: 0% 30% 30% 0%;
     padding: 15px;
+
 }
+
+/* Footer-Bereich */
 
 .div_footer_content{
     display: flex;
@@ -211,17 +305,31 @@ nav{
     padding-right: 24px;
     padding-top: 24px;
 }
-
 .separator{
     background-color: black;
     height: 30px;
     width: 2px;
 }
 
+.img_footer{
+    padding-top: 24px;
+}
+
 .d_none{
     display: none;
 }
+@media (max-width: 750px){
+    .div_nav_content {
+        display: none
+    }
+    .burger_menu{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
+
+/* extra Book Page */
 .book_page{
     display: flex;
     flex-direction: column;
@@ -297,14 +405,4 @@ border-radius: 5%;
 
 .empty_heart{
     background: transparent;
-}
-
-@media (max-width: 750px){
-    .div_nav_content {
-        display: none
-    }
-    .burger_menu{
-        display: flex;
-        flex-direction: column;
-    }
 }
