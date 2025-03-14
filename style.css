@@ -170,7 +170,9 @@ nav{
     border-radius: 30%;
 }
 .div_book_info{
-    height: 200px
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-radius: 5%;
 }
 
 /* Sektion Best Seller */
@@ -276,9 +278,9 @@ nav{
     background-color: rgba(0, 0, 0, 0.331);
 }
 
-.book_description,
+
 #book_description{
-    background-color: rgb(205, 154, 115);
+    background-color: rgba(205, 154, 115, 0.317);
     border-radius: 0% 30% 30% 0%;
     padding: 15px;
 
@@ -365,17 +367,19 @@ nav{
     flex-direction: column;
 }
 textarea{
-min-height: 50px;
+min-height: 80px;
+width: 60%;
 background-color: rgba(0, 0, 0, 0.28);
 color: white;
 font-family: 'ASOKA';
 font-size: 20px;
 border: none;
+border-radius: 5%;
 }
 
 .div_textarea{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 .saved_comment{
     
