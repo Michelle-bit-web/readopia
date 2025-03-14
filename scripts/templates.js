@@ -1,4 +1,4 @@
-function renderBookTemplate(i,title,cover,author,description,likes,price,year,genre,user,comment){
+function renderBookTemplate(i,title,cover,author,description,likes,price,year,genre){
     return /*html*/`
     <section class="section_book_page">
         <div class="upper_page_part">

@@ -211,7 +211,6 @@ function init() {
 //simplere Variante
 function loadAllBooks() {
   for (let i = 0; i < books.length; i++) {
-    
     let bookTitles = books[i].name;
     let bookCovers = books[i].cover;
     let bookAuthor = books[i].author;
@@ -220,30 +219,23 @@ function loadAllBooks() {
     let bookPrices = books[i].price;
     let bookYear = books[i].publishedYear;
     let bookGenre = books[i].genre;
-    document.getElementById("render_single_books").innerHTML += renderBookTemplate(
-      i,
-      bookTitles,
-      bookCovers,
-      bookAuthor,
-      bookDescription,
-      bookLikes,
-      bookPrices,
-      bookYear,
-      bookGenre,
-    );
+    document.getElementById("render_single_books").innerHTML += 
+    renderBookTemplate(i,bookTitles,bookCovers,bookAuthor,bookDescription,bookLikes,bookPrices,bookYear,bookGenre);
     getCoverImages(bookCovers);
-    
-    for (let j = 0; j < books[i].comments.length; j++) {
-
-      let comment = books[i].comments[j].comment;
-      let user = books[i].comments[j].name;
-      document.getElementById(`written_comments${i}`).innerHTML += renderComments(user,comment);
-    }
+    getComment(i);
   }
 }
 
 function getCoverImages(cover) {
   document.getElementById(`${cover}`).style.backgroundImage = `url('./assets/img/${cover}.png')`;
+}
+
+function getComment(i){
+  for (let j = 0; j < books[i].comments.length; j++) {
+    let comment = books[i].comments[j].comment;
+    let user = books[i].comments[j].name;
+    document.getElementById(`written_comments${i}`).innerHTML += renderComments(user,comment);
+  }
 }
 
 //Like-Button: Liked - true or false?

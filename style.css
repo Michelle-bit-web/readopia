@@ -381,6 +381,9 @@ border-radius: 5%;
     display: flex;
     align-items: flex-end;
 }
+.written_comments{
+    min-height: 150px
+}
 .saved_comment{
     
     border-radius: 5%;
