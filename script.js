@@ -233,29 +233,20 @@ function loadAllBooks() {
     );
     getCoverImages(bookCovers);
     
-    // for (let j = 0; j = books[i].comments.length; j++) {
+    for (let j = 0; j < books[i].comments.length; j++) {
 
-    //   let comment = books[i].comments[j].comment;
-    //   let user = books[i].comments[j].name;
-    //   document.getElementById("written_comments").innerHTML += renderComments(user,comment);
-    // }
+      let comment = books[i].comments[j].comment;
+      let user = books[i].comments[j].name;
+      document.getElementById(`written_comments${i}`).innerHTML += renderComments(user,comment);
+    }
   }
 }
-
-
-// let singleBookComment = books[i].comments;
-//     for (let j = 0; j = singleBookComment.length; j++) {
-//       let commentText = singleBookComment[j].comment;
-//       let user = singleBookComment[j].name;
-//       document.getElementById("written_comments").innerHTML += renderComments(user,commentText);
-//     }
-// let commentText = singleBookComment[j].filter(text => text.comment[j]);
-// let user = singleBookComment[j].filter(text => text.comment[j]);
 
 function getCoverImages(cover) {
   document.getElementById(`${cover}`).style.backgroundImage = `url('./assets/img/${cover}.png')`;
 }
 
+//Like-Button: Liked - true or false?
 function checkLikeStatus() {
   for (let i = 0; i < books.length; i++) {
     let likeStatus = books[i].liked
@@ -266,17 +257,24 @@ function checkLikeStatus() {
   }
 }
 
+//On click - Count +1 or -1
+
 function LikeOrDislike(a, likes, i, event) {
   if (a == 1) {
-    document.getElementById("like_number").innerHTML = likes + 1;
+    let newLike = likes + 1;
+    document.getElementById(`like_number${i}`).innerHTML = newLike;
     document.getElementById(`liked${i}`).classList.remove("d_none");
+    document.getElementById(`not_liked${i}`).classList.add("d_none");
   }
   if (a < 0) {
-    document.getElementById("like_number").innerHTML = likes - 1;
-    document.getElementById(`not_liked${i}`).classList.add("d_none");
+    let newLike = likes - 1;
+    document.getElementById(`like_number${i}`).innerHTML = newLike;
+    document.getElementById(`liked${i}`).classList.add("d_none");
+    document.getElementById(`not_liked${i}`).classList.remove("d_none");
   }
   event.stopPropagation();
 }
+
 //Vorlage vom Buchstaben-Counter
 function countLetters() {
   let inputLetters = document.getElementById("inputCounter").value.length;
@@ -302,10 +300,10 @@ function removeDNone(event) {
 //für die Kommentarfunktion
 function sendComment() {
   let name = document.getElementById("username").innerHTML;
-  let comment = document.getElementById("comment_text").value;
+  let comment = document.getElementById(`comment_text${i}`).value;
 
   if (comment !== "") {
-    document.getElementById("written_comments").innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
+    document.getElementById(`written_comments${i}`).innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
   } else {
     alert("Fill in a comment, please!");
   }

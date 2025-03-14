@@ -16,7 +16,7 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
         </div>
         <div class="div_like_and_comments">
             <div class="div_like">
-                <div id="like_number">${likes}</div>
+                <div id="like_number${i}">${likes}</div>
                 <img onclick="LikeOrDislike(1,${likes},${i},event)" id="not_liked${i}" class="heart_icon empty_heart" src="./assets/icon/heart_icon.png" alt="like button">
                 <img onclick="LikeOrDislike(-1,${likes},${i},event)" id="liked${i}" class="heart_icon d_none" src="./assets/icon/heart-fill.PNG" alt="like button">
             </div>
@@ -31,11 +31,11 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
             <span>user:<span id='username'> Readiculous237</span></span>
             <label for="comment_text">Your comment:</label>
             <div class="div_textarea">
-                <textarea name="comment_text" id="comment_text" placeholder="Give your feedback..."></textarea>
+                <textarea name="comment_text" id="comment_text${i}" placeholder="Give your feedback..."></textarea>
                 <img onclick="sendComment()" class="send_icon" src="./assets/icon/send_icon.png" alt="send button">
             </div>
         </div>
-        <div id="written_comments" class="written_comments">
+        <div id="written_comments${i}" class="written_comments">
             User comments:
         </div>
         
