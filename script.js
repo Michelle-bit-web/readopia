@@ -222,7 +222,7 @@ function loadAllBooks() {
     document.getElementById("render_single_books").innerHTML += 
     renderBookTemplate(i,bookTitles,bookCovers,bookAuthor,bookDescription,bookLikes,bookPrices,bookYear,bookGenre);
     getCoverImages(bookCovers);
-    getComment(i);
+    getComment(i, bookLikes);
   }
 }
 
@@ -248,6 +248,8 @@ function checkLikeStatus() {
   }
 }
 
+let currentLikes;
+
 function LikeOrDislike(a, likes, i, event) {
   if (a == 1) {
     let newLike = likes + 1;
@@ -264,7 +266,7 @@ function LikeOrDislike(a, likes, i, event) {
   event.stopPropagation();
 }
 
-function sendComment() {
+function sendComment(i) {
   let name = document.getElementById("username").innerHTML;
   let comment = document.getElementById(`comment_text${i}`).value;
 
@@ -273,7 +275,7 @@ function sendComment() {
   } else {
     alert("Fill in a comment, please!");
   }
-  comment = "";
+  document.getElementById(`comment_text${i}`).value = "";
 }
 
 function triggerSidebar(event) {

@@ -18,7 +18,7 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
         <div class="div_like_and_comments">
             <div class="div_like">
                 <div id="like_number${i}">${likes}</div>
-                <img onclick="LikeOrDislike(1,${likes},${i},event)" id="not_liked${i}" class="heart_icon empty_heart" src="./assets/icon/heart_icon.png" alt="like button">
+                <img onclick="LikeOrDislike(1,${likes},${i},event)" id="not_liked${i}" class="heart_icon empty_heart" src="./assets/icon/heart-empty.png" alt="like button">
                 <img onclick="LikeOrDislike(-1,${likes},${i},event)" id="liked${i}" class="heart_icon d_none" src="./assets/icon/heart-fill.PNG" alt="like button">
             </div>
             <br>
@@ -37,7 +37,7 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
             <br>
             <div class="div_textarea">
                 <textarea name="comment_text" id="comment_text${i}" placeholder="Your feedback..."></textarea>
-                <img onclick="sendComment()" class="send_icon" src="./assets/icon/send_icon.png" alt="send button">
+                <img onclick="sendComment(${i})" class="send_icon" src="./assets/icon/send_icon.png" alt="send button">
             </div>
             <br>
         </div>
