@@ -1,5 +1,5 @@
 function renderBookTemplate(i,title,cover,author,description,likes,price,year,genre,user,comment){
-    return `
+    return /*html*/`
     <section class="section_book_page">
         <div class="upper_page_part">
             <h1>${title}</h1>
@@ -17,7 +17,7 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
         <div class="div_like_and_comments">
             <div class="div_like">
                 <div id="like_number">${likes}</div>
-                <img onclick="LikeOrDislike(1,${likes},${i},event)" id="not_liked${i}" class="heart_icon" src="./assets/icon/heart_icon.png" alt="like button">
+                <img onclick="LikeOrDislike(1,${likes},${i},event)" id="not_liked${i}" class="heart_icon empty_heart" src="./assets/icon/heart_icon.png" alt="like button">
                 <img onclick="LikeOrDislike(-1,${likes},${i},event)" id="liked${i}" class="heart_icon d_none" src="./assets/icon/heart-fill.PNG" alt="like button">
             </div>
             <div class="book_description">
@@ -42,6 +42,6 @@ function renderBookTemplate(i,title,cover,author,description,likes,price,year,ge
     </section>`
 }
 
-function renderComments(user, commentText){
-    return `<p class="saved_comment"><b>${user}:</b> <br> ${commenttext}</p>`
+function renderComments(user, comment){
+    return `<p class="saved_comment"><b>${user}:</b> <br> ${comment}</p>`
 }

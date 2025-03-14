@@ -389,6 +389,6 @@ min-height: 40px;
     align-items: center;
 }
 
-.heart_icon{
-
+.empty_heart{
+    background: transparent;
 }

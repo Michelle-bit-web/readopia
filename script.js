@@ -205,8 +205,6 @@ let books = [
 ];
 //Bilder Rendern
 function init() {
-  // renderImg()
-  // renderNewAddition();
   loadAllBooks();
   checkLikeStatus();
 }
@@ -234,14 +232,25 @@ function loadAllBooks() {
       bookGenre,
     );
     getCoverImages(bookCovers);
-    let singleBookComment = books[i].comments;
-    for (let j = 0; j = singleBookComment.length; j++) {
-      let commentText = singleBookComment[j].comment;
-      let user = singleBookComment[j].name;
-      document.getElementById("written_comments").innerHTML += renderComments(user,commentText);
-    }
+    
+    // for (let j = 0; j = books[i].comments.length; j++) {
+
+    //   let comment = books[i].comments[j].comment;
+    //   let user = books[i].comments[j].name;
+    //   document.getElementById("written_comments").innerHTML += renderComments(user,comment);
+    // }
   }
 }
+
+
+// let singleBookComment = books[i].comments;
+//     for (let j = 0; j = singleBookComment.length; j++) {
+//       let commentText = singleBookComment[j].comment;
+//       let user = singleBookComment[j].name;
+//       document.getElementById("written_comments").innerHTML += renderComments(user,commentText);
+//     }
+// let commentText = singleBookComment[j].filter(text => text.comment[j]);
+// let user = singleBookComment[j].filter(text => text.comment[j]);
 
 function getCoverImages(cover) {
   document.getElementById(`${cover}`).style.backgroundImage = `url('./assets/img/${cover}.png')`;
@@ -249,7 +258,8 @@ function getCoverImages(cover) {
 
 function checkLikeStatus() {
   for (let i = 0; i < books.length; i++) {
-    if (books.filter((liked) => liked.liked == true)) {
+    let likeStatus = books[i].liked
+    if (likeStatus == true) {
       document.getElementById(`not_liked${i}`).classList.add("d_none");
       document.getElementById(`liked${i}`).classList.remove("d_none");
     }
