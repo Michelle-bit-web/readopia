@@ -1,30 +1,32 @@
 @font-face {
-    font-family: 'jackie';
-    src: url('./assets/fonts/jackie.ttf') format('truetype');
+    font-family: 'ASOKA';
+    src: url('./assets/fonts/WILLG___.TTF') format('truetype');
 }
 
-@font-face {
-    font-family: 'Sacramento';
-    src: url('./assets/fonts/Sacramento.ttf') format('truetype');
-}
 body{
     font-size: 20px;
     font-weight: lighter;
+    color: rgb(245, 217, 197);
+    background-image: url('./assets/img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body,
 header,
 footer{
     margin: 0;
-    font-family: 'jackie';
+    font-family: 'ASOKA';
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-header{
+header,
+footer{
     border-bottom: 2px solid black;
+    background-color: rgb(205, 154, 115);
 }
 
 h1{
@@ -40,11 +42,14 @@ h2{
 }
 a {
     text-decoration: none;
+    color: white
+}
+a:hover{
+    color:rgb(205, 154, 115);
 }
 
-a:hover{
-    cursor: pointer;
-    scale: 1.05;
+p{
+   margin: 5px 0; 
 }
 
 .max_width{
@@ -55,18 +60,23 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 24px;
 }
 
 .burger_menu{
     height: 32px;
     display: none;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .burger_menu_icon{
     background-color: black;
-    width: 24px;
-    height: 2.5px;
-    margin: 5px;
+    width: 28px;
+    height: 3px;
+    margin: 2px;
 }
 
 .nav_sidebar{
@@ -75,11 +85,13 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: rgba(0, 0, 0, 0.627);
+    background-color: rgba(0, 0, 0, 0.486);
     width: 20%;
     height: 100vh;
     gap: 8px;
     transition: all 125ms ease-in-out;
+    padding-right: 24px;
+    padding-top: 100px;
 }
 
 .search_input_sidebar{
@@ -130,8 +142,19 @@ nav{
 .div_nav_content{
     display: flex;
     justify-content: flex-end;
-    gap: 3%
+    gap: 3%;
 }
+
+.div_nav_content a,
+.div_footer_links a{
+    color: rgb(0, 0, 0);
+    }
+
+.div_nav_content a:hover,
+.div_footer_links a:hover{
+        color: rgb(255, 255, 255);
+        }
+
 .div_search_input{
     display: flex;
 }
@@ -253,12 +276,21 @@ nav{
     background-color: rgba(0, 0, 0, 0.331);
 }
 
+.book_description,
+#book_description{
+    background-color: rgb(205, 154, 115);
+    border-radius: 0% 30% 30% 0%;
+    padding: 15px;
+
+}
+
 /* Footer-Bereich */
 
 .div_footer_content{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 24px;
 }
 
 .div_footer_links{
@@ -266,11 +298,18 @@ nav{
     align-items: center;
     gap: 5%;
     width: 300px;
+    padding-right: 24px;
+    padding-top: 24px;
 }
 .separator{
     background-color: black;
     height: 30px;
     width: 2px;
+}
+
+.img_footer{
+    padding-left: 24px;
+    padding-top: 24px;
 }
 
 .d_none{
@@ -291,10 +330,12 @@ nav{
 .book_page{
     display: flex;
     flex-direction: column;
+    background-color: rgba(32, 32, 32, 0.481);
 }
 .section_book_page{
     display: flex;
     flex-direction: column;
+    padding: 0 24px;
 }
 
 .upper_page_part{
@@ -303,11 +344,20 @@ nav{
 }
 .div_book_info{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 24px;
 }
+
+.book_informations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .section_comments,
-.div_like{
+.div_like_and_comments{
     border-bottom: 1px solid rgb(186, 186, 186);
+    padding: 0 24px;
 }
 
 .div_comments{
@@ -322,7 +372,23 @@ min-height: 40px;
     
     display: flex;
 }
+.saved_comment{
+    border: 1px solid rgb(186, 186, 186); 
+    border-radius: 5%;
+    padding: 5px;
+}
+
 .heart_icon,
 .send_icon{
-    width:30px
+    width:30px;
+    margin-left: 8px
+}
+
+.div_like{
+    display: flex;
+    align-items: center;
+}
+
+.heart_icon{
+
 }
