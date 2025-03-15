@@ -284,19 +284,25 @@ border-radius: 5%;
     background-color: rgba(0, 0, 0, 0.28);
 }
 
-.heart_icon,
-.send_icon{
+.heart_icon{
     width:30px;
     margin-left: 8px
+}
+
+.send_icon{
+    width: 40px;
+}
+
+.send_icon:hover{
+    border: 2px, solid, rgba(0, 0, 0, 0.308);
+    border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.308);
+    scale: 0.8;
 }
 
 .div_like{
     display: flex;
     align-items: center;
-}
-
-.empty_heart{
-    background: transparent;
 }
 
 @media (max-width: 750px){

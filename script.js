@@ -53,8 +53,7 @@ let books = [
   {
     name: "Die Farben des Himmels",
     cover: "book3",
-    description:
-      "A heartfelt romance unfolds under painted skies, where love, fate, and dreams intertwine.",
+    description: "A heartfelt romance unfolds under painted skies, where love, fate, and dreams intertwine.",
     author: "Laura Blau",
     likes: 1520,
     liked: true,
@@ -75,7 +74,6 @@ let books = [
         name: "FantasyNerd",
         comment: "Fantastische Welten und epische Abenteuer - genau mein Geschmack!",
       },
-      
     ],
   },
   {
@@ -150,14 +148,16 @@ let books = [
     comments: [
       {
         name: "FullOfEnergy",
-        comment: "Die Zusammenhänge zwischen Sport, Immunsystem und Gehirnleistung sind in diesem Buch extrem gut erklärt.",
+        comment:
+          "Die Zusammenhänge zwischen Sport, Immunsystem und Gehirnleistung sind in diesem Buch extrem gut erklärt.",
       },
     ],
   },
   {
     name: "Das verborgene Königreich",
     cover: "book8",
-    description: "A magical fantasy adventure where ancient secrets, and a young hero’s destiny intertwine in a battle for freedom.",
+    description:
+      "A magical fantasy adventure where ancient secrets, and a young hero’s destiny intertwine in a battle for freedom.",
     author: "Elena Gold",
     likes: 920,
     liked: false,
@@ -173,7 +173,7 @@ let books = [
       {
         name: "BücherLiebhaber",
         comment: "Eine magische Reise durch eine faszinierende Fantasiewelt, absolut fesselnd.",
-      }
+      },
     ],
   },
   {
@@ -219,8 +219,17 @@ function loadAllBooks() {
     let bookPrices = books[i].price;
     let bookYear = books[i].publishedYear;
     let bookGenre = books[i].genre;
-    document.getElementById("render_single_books").innerHTML += 
-    renderBookTemplate(i,bookTitles,bookCovers,bookAuthor,bookDescription,bookLikes,bookPrices,bookYear,bookGenre);
+    document.getElementById("render_single_books").innerHTML += renderBookTemplate(
+      i,
+      bookTitles,
+      bookCovers,
+      bookAuthor,
+      bookDescription,
+      bookLikes,
+      bookPrices,
+      bookYear,
+      bookGenre
+    );
     getCoverImages(bookCovers);
     getComment(i, bookLikes);
   }
@@ -230,17 +239,17 @@ function getCoverImages(cover) {
   document.getElementById(`${cover}`).style.backgroundImage = `url('./assets/img/${cover}.png')`;
 }
 
-function getComment(i){
+function getComment(i) {
   for (let j = 0; j < books[i].comments.length; j++) {
     let comment = books[i].comments[j].comment;
     let user = books[i].comments[j].name;
-    document.getElementById(`written_comments${i}`).innerHTML += renderComments(user,comment);
+    document.getElementById(`written_comments${i}`).innerHTML += renderComments(user, comment);
   }
 }
 
 function checkLikeStatus() {
   for (let i = 0; i < books.length; i++) {
-    let likeStatus = books[i].liked
+    let likeStatus = books[i].liked;
     if (likeStatus == true) {
       document.getElementById(`not_liked${i}`).classList.add("d_none");
       document.getElementById(`liked${i}`).classList.remove("d_none");
@@ -251,19 +260,32 @@ function checkLikeStatus() {
 let currentLikes;
 
 function LikeOrDislike(a, likes, i, event) {
+  event.target.classList.toggle("d_none");
   if (a == 1) {
-    let newLike = likes + 1;
-    document.getElementById(`like_number${i}`).innerHTML = newLike;
     document.getElementById(`liked${i}`).classList.remove("d_none");
-    document.getElementById(`not_liked${i}`).classList.add("d_none");
+    let newLike = likes + 1;
+    document.getElementById(`like_number${i}`).innerHTML = `${newLike}`;
+    refreshLikes(a, i, newLike);
   }
   if (a < 0) {
-    let newLike = likes - 1;
-    document.getElementById(`like_number${i}`).innerHTML = newLike;
-    document.getElementById(`liked${i}`).classList.add("d_none");
     document.getElementById(`not_liked${i}`).classList.remove("d_none");
+    let newLike = likes - 1;
+    document.getElementById(`like_number${i}`).innerHTML = `${newLike}`;
+    refreshLikes(a, i, newLike);
   }
   event.stopPropagation();
+}
+
+function refreshLikes(a, i, newLike){
+  if(a == 1){
+    books[i].liked = true;
+  }
+  if (a < 0){
+    books[i].liked = false;
+  }
+  books[i].likes = newLike;
+  document.getElementById("render_single_books").innerHTML = "";
+  init();
 }
 
 function sendComment(i) {
@@ -271,7 +293,9 @@ function sendComment(i) {
   let comment = document.getElementById(`comment_text${i}`).value;
 
   if (comment !== "") {
-    document.getElementById(`written_comments${i}`).innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
+    document.getElementById(
+      `written_comments${i}`
+    ).innerHTML += `<p class="saved_comment">${name}: <br> ${comment}</p>`;
   } else {
     alert("Fill in a comment, please!");
   }
